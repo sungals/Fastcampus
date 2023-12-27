@@ -9,7 +9,7 @@ import SwiftUI
 @main
 struct LMessengerApp: App {
     
-    @StateObject var container: DIContainer = .init(service: Services())
+    @StateObject var container: DIContainer = .init(services: Services())
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {

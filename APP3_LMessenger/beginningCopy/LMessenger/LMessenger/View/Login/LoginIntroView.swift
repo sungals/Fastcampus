@@ -32,18 +32,11 @@ struct LoginIntroView: View {
                     
                 }, label: {
                     Text("로그인")
-                        .font(.system(size: 14))
-                        .foregroundColor(.lineAppColor)
-                        .frame(maxWidth: .infinity, maxHeight: 40)
                 })
-                .overlay {
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color.lineAppColor, lineWidth: 0.8)
-                }
-                .padding(.horizontal, 15)
-                .navigationDestination(isPresented: $isPresentedLoginView) {
-                    LoginView()
-                }
+                .buttonStyle(LoginButtonStyle(textColor: .lineAppColor))
+            }
+            .navigationDestination(isPresented: $isPresentedLoginView) {
+                LoginView()
             }
         }
     }

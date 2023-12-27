@@ -8,56 +8,49 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var isPresentedGoogleView: Bool = false
-    @State private var isPresentedAppleView: Bool = false
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var authViewModel: AuthenticatedViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
-            
-            Text("로그인")
-                .font(.system(size: 28, weight: .bold))
-                .foregroundColor(.bkText)
-                .padding(EdgeInsets(top: 30, leading: 30, bottom: 10, trailing: 0))
-            Text("아래 제공되는 서비스로 로그인을 해주세요.")
-                .font(.system(size: 14))
-                .foregroundColor(.greyDeep)
-                .padding(.leading, 30)
+            Group {
+                Text("로그인")
+                    .font(.system(size: 28, weight: .bold))
+                    .foregroundColor(.bkText)
+                    .padding(.top, 80)
+                Text("아래 제공되는 서비스로 로그인을 해주세요.")
+                    .font(.system(size: 14))
+                    .foregroundColor(.greyDeep)
+            }
+            .padding(.horizontal, 30)
             
             Spacer()
             
             Button(action: {
-                
+                authViewModel.send(action: .googleLogin)
             }, label: {
                 Text("Google로 로그인")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundColor(.bkText)
-                    .frame(maxWidth: .infinity, maxHeight: 40)
             })
-            .overlay {
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color.greyLight, lineWidth: 0.8)
-            }
-            .padding(20)
-            .navigationDestination(isPresented: $isPresentedGoogleView) {
-                
-            }
+            .buttonStyle(LoginButtonStyle(textColor: .bkText, borderColor: .greyDeep))
+            
             
             Button(action: {
-                
+                // TODO: applp 로그인
             }, label: {
                 Text("Apple로 로그인")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundColor(.bkText)
-                    .frame(maxWidth: .infinity, maxHeight: 40)
             })
-            .overlay {
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color.greyLight, lineWidth: 0.8)
-            }
-            .padding(20)
-            .navigationDestination(isPresented: $isPresentedAppleView) {
-            }
+            .buttonStyle(LoginButtonStyle(textColor: .bkText, borderColor: .greyDeep))
         }
+        .navigationBarBackButtonHidden()
+        .toolbar(content: {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image("back")
+                })
+            }
+        })
     }
 }
 
