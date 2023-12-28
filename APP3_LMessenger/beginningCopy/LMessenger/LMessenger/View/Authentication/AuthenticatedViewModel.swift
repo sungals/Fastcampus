@@ -21,7 +21,7 @@ class AuthenticatedViewModel: ObservableObject {
         case googleLogin
     }
     
-    @Published var authenticationState: AuthenticationState = .unauthenticated
+    @Published var authenticationState: AuthenticationState = .authenticated
     
     var userId: String?
     
