@@ -31,12 +31,18 @@
 		F944598C2B3BFA2E00C185AF /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944598B2B3BFA2E00C185AF /* ChatListView.swift */; };
 		F944598F2B3BFA3900C185AF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944598E2B3BFA3900C185AF /* HomeView.swift */; };
 		F94459912B3C029800C185AF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94459902B3C029800C185AF /* HomeViewModel.swift */; };
+		F9B8300B2B45086E00D6C396 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B830092B45086E00D6C396 /* SHA256.swift */; };
+		F9B8300C2B45086E00D6C396 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B8300A2B45086E00D6C396 /* RandomNonceString.swift */; };
 		F9DB6B732B32AE34005D9535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DB6B722B32AE34005D9535 /* LaunchScreen.storyboard */; };
 		F9DB6B762B32AF08005D9535 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB6B752B32AF08005D9535 /* DIContainer.swift */; };
 		F9DB6B792B32AF5F005D9535 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB6B782B32AF5F005D9535 /* Services.swift */; };
 		F9DB6B7D2B32AFFF005D9535 /* AuthenticatedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB6B7C2B32AFFF005D9535 /* AuthenticatedViewModel.swift */; };
 		F9E4E9CE2B3D0FCD00592B3D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F9E4E9CD2B3D0FCD00592B3D /* FirebaseDatabase */; };
 		F9E4E9D12B3D126500592B3D /* UserDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4E9D02B3D126500592B3D /* UserDBRepository.swift */; };
+		F9E4E9DE2B43F0DC00592B3D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4E9DD2B43F0DC00592B3D /* UserService.swift */; };
+		F9E4E9E12B43F1BB00592B3D /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4E9E02B43F1BB00592B3D /* UserObject.swift */; };
+		F9E4E9E32B43F20F00592B3D /* DBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4E9E22B43F20F00592B3D /* DBError.swift */; };
+		F9E4E9E52B44D99E00592B3D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4E9E42B44D99E00592B3D /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,11 +89,18 @@
 		F944598B2B3BFA2E00C185AF /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		F944598E2B3BFA3900C185AF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F94459902B3C029800C185AF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F9B830092B45086E00D6C396 /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
+		F9B8300A2B45086E00D6C396 /* RandomNonceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 		F9DB6B722B32AE34005D9535 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../../../../completion/LMessenger/LMessenger/Resource/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9DB6B752B32AF08005D9535 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		F9DB6B782B32AF5F005D9535 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		F9DB6B7C2B32AFFF005D9535 /* AuthenticatedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedViewModel.swift; sourceTree = "<group>"; };
 		F9E4E9D02B3D126500592B3D /* UserDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepository.swift; sourceTree = "<group>"; };
+		F9E4E9DD2B43F0DC00592B3D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F9E4E9E02B43F1BB00592B3D /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		F9E4E9E22B43F20F00592B3D /* DBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBError.swift; sourceTree = "<group>"; };
+		F9E4E9E42B44D99E00592B3D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F9E4E9E62B44DE3200592B3D /* LMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LMessenger.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,15 +155,17 @@
 		723ABD852AFFF1B800C260F1 /* LMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				F9E4E9CF2B3D125800592B3D /* Repository */,
+				F9E4E9E62B44DE3200592B3D /* LMessenger.entitlements */,
 				723ABD862AFFF1B800C260F1 /* LMessengerApp.swift */,
 				F944596A2B33BF6F00C185AF /* AppDelegate.swift */,
 				F94459712B33C1E700C185AF /* Info.plist */,
 				F944596F2B33C1CB00C185AF /* GoogleService-Info.plist */,
+				F9DB6B742B32AF01005D9535 /* General */,
 				F9DB6B7A2B32AFE1005D9535 /* View */,
 				F94459832B3BC4AB00C185AF /* Model */,
 				F9DB6B772B32AF4E005D9535 /* Service */,
-				F9DB6B742B32AF01005D9535 /* General */,
+				F9B830082B4507EC00D6C396 /* Util */,
+				F9E4E9CF2B3D125800592B3D /* Repository */,
 				72E4BEFA2B00B871007A1060 /* Extension */,
 				723ABDB02AFFF1D800C260F1 /* Resource */,
 				723ABD8C2AFFF1B900C260F1 /* Preview Content */,
@@ -245,10 +260,20 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		F9B830082B4507EC00D6C396 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F9B8300A2B45086E00D6C396 /* RandomNonceString.swift */,
+				F9B830092B45086E00D6C396 /* SHA256.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		F9DB6B742B32AF01005D9535 /* General */ = {
 			isa = PBXGroup;
 			children = (
 				F9DB6B752B32AF08005D9535 /* DIContainer.swift */,
+				F9E4E9E42B44D99E00592B3D /* Constant.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -259,6 +284,7 @@
 				F9DB6B782B32AF5F005D9535 /* Services.swift */,
 				F94459722B33C24200C185AF /* AuthenticationService.swift */,
 				F94459862B3BC4FA00C185AF /* ServiceError.swift */,
+				F9E4E9DD2B43F0DC00592B3D /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -294,9 +320,19 @@
 		F9E4E9CF2B3D125800592B3D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				F9E4E9DF2B43F1AB00592B3D /* DTO */,
 				F9E4E9D02B3D126500592B3D /* UserDBRepository.swift */,
+				F9E4E9E22B43F20F00592B3D /* DBError.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		F9E4E9DF2B43F1AB00592B3D /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				F9E4E9E02B43F1BB00592B3D /* UserObject.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,13 +479,16 @@
 			files = (
 				F94459852B3BC4B700C185AF /* User.swift in Sources */,
 				F94459912B3C029800C185AF /* HomeViewModel.swift in Sources */,
+				F9E4E9E32B43F20F00592B3D /* DBError.swift in Sources */,
 				F94459782B33C4C100C185AF /* LoginIntroView.swift in Sources */,
 				F9DB6B7D2B32AFFF005D9535 /* AuthenticatedViewModel.swift in Sources */,
 				F9DB6B792B32AF5F005D9535 /* Services.swift in Sources */,
 				F944598C2B3BFA2E00C185AF /* ChatListView.swift in Sources */,
 				F944598F2B3BFA3900C185AF /* HomeView.swift in Sources */,
+				F9B8300B2B45086E00D6C396 /* SHA256.swift in Sources */,
 				F9DB6B762B32AF08005D9535 /* DIContainer.swift in Sources */,
 				723ABD892AFFF1B800C260F1 /* AuthenticatedView.swift in Sources */,
+				F9E4E9E52B44D99E00592B3D /* Constant.swift in Sources */,
 				F944596B2B33BF6F00C185AF /* AppDelegate.swift in Sources */,
 				72E4BEFC2B00B871007A1060 /* Color+Extension.swift in Sources */,
 				F94459892B3BF3CC00C185AF /* MainTabType.swift in Sources */,
@@ -457,9 +496,12 @@
 				723ABD872AFFF1B800C260F1 /* LMessengerApp.swift in Sources */,
 				F944597D2B33D1D700C185AF /* LoginView.swift in Sources */,
 				F94459732B33C24200C185AF /* AuthenticationService.swift in Sources */,
+				F9E4E9DE2B43F0DC00592B3D /* UserService.swift in Sources */,
 				F9E4E9D12B3D126500592B3D /* UserDBRepository.swift in Sources */,
 				F94459872B3BC4FA00C185AF /* ServiceError.swift in Sources */,
+				F9B8300C2B45086E00D6C396 /* RandomNonceString.swift in Sources */,
 				F944597B2B33C4D400C185AF /* MainTabView.swift in Sources */,
+				F9E4E9E12B43F1BB00592B3D /* UserObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +657,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LMessenger/LMessenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LMessenger/Preview Content\"";
@@ -632,7 +675,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fastcampus.LMessenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fastcampus.LMessengers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -645,6 +688,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LMessenger/LMessenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LMessenger/Preview Content\"";
@@ -662,7 +706,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.fastcampus.LMessenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fastcampus.LMessengers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -11,17 +11,17 @@ struct LoginButtonStyle: ButtonStyle {
     
     let textColor: Color
     let borderColor: Color
-    
+    @Environment(\.isEnabled) private var isEnabled: Bool
+
     init(textColor: Color, borderColor: Color? = nil) {
         self.textColor = textColor
         self.borderColor = borderColor ?? textColor
     }
     
-    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: 14, weight: .bold))
-            .foregroundColor(textColor)
+            .foregroundColor(isEnabled ? textColor : Color.gray)
             .frame(maxWidth: .infinity, maxHeight: 40)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
