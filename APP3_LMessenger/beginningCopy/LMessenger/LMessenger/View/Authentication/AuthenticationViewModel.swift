@@ -16,7 +16,7 @@ enum AuthenticationState {
 
 
 /// 인증을 담당하는 역할
-class AuthenticatedViewModel: ObservableObject {
+class AuthenticationViewModel: ObservableObject {
 
     enum Action {
         case checkAuthenticationState
