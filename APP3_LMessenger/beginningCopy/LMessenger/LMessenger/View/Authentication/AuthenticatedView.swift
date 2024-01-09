@@ -8,7 +8,7 @@ import SwiftUI
 
 struct AuthenticatedView: View {
     
-    @StateObject var authViewModel: AuthenticatedViewModel
+    @StateObject var authViewModel: AuthenticationViewModel
     
     var body: some View {
         VStack {
@@ -29,6 +29,6 @@ struct AuthenticatedView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticatedView(authViewModel: .init(container: .init(services: StubService()), isLoading: false))
+        AuthenticatedView(authViewModel: .init(container: .init(services: StubService())))
     }
 }

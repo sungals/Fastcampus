@@ -12,54 +12,89 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                profileView
-                    .padding(.vertical, 30)
-                
-                searchView
-                    .padding(.bottom, 24)
-                
-                HStack {
-                    Text("친구")
-                        .font(.system(size: 14, weight: .bold))
-                        .foregroundColor(.bkText)
-                    Spacer()
+            contentView
+                .fullScreenCover(item: $viewModel.modalDestination) {
+                    switch $0 {
+                        case .myProfile:
+                            MyProfileView()
+                        case .otherProfile(let userId):
+                            OtherProfileView()
+                    }
                 }
-                .padding(.horizontal, 30)
-                .padding(.bottom, 30)
-                
-                // TODO: 친구목록
-                if viewModel.users.isEmpty {
-                    Spacer(minLength: 89)
-                    emptyView
-                } else {
+        }
+    }
+    
+    var loadedView: some View {
+        ScrollView {
+            profileView
+                .padding(.vertical, 30)
+            
+            searchView
+                .padding(.bottom, 24)
+            
+            HStack {
+                Text("친구")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundColor(.bkText)
+                Spacer()
+            }
+            .padding(.horizontal, 30)
+            .padding(.bottom, 30)
+            
+            // TODO: 친구목록
+            if viewModel.users.isEmpty {
+                Spacer(minLength: 89)
+                emptyView
+            } else {
+                LazyVStack {
                     ForEach(viewModel.users, id: \.id) { user in
-                        HStack(spacing: 8) {
-                            Image("person")
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
-                            Text(user.name)
-                                .font(.system(size: 14, weight: .bold))
-                                .foregroundColor(.bkText)
-                            Spacer()
+                        Button {
+                            viewModel.send(action: .presentOtherProfileView(user.id))
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image("person")
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                Text(user.name)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .foregroundColor(.bkText)
+                                Spacer()
+                            }
                         }
                         .padding(.horizontal, 30)
                     }
                 }
             }
-            .toolbar {
-                Image("bookmark")
-                Image("notifications")
-                Image("person_add")
-                Button(action: {
-                    // TODO:
-                }, label: {
-                    Image("settings")
-                })
-            }
-            .onAppear {
-                viewModel.send(action: .getUser)
-            }
+        }
+    }
+    
+    @ViewBuilder
+    var contentView: some View {
+        switch viewModel.phase {
+            case .notRequested:
+                PlaceholderView()
+                    .onAppear {
+                        viewModel.send(action: .load)
+                    }
+                
+            case .loading:
+                LoadingView()
+                
+            case .success:
+                loadedView
+                    .toolbar {
+                        Image("bookmark")
+                        Image("notifications")
+                        Image("person_add")
+                        Button(action: {
+                            // TODO:
+                        }, label: {
+                            Image("settings")
+                        })
+                    }
+                
+            case .fail:
+                ErrorView()
         }
     }
     
@@ -134,6 +169,9 @@ struct HomeView: View {
                 .clipShape(Circle())
         }
         .padding(.horizontal, 30)
+        .onTapGesture {
+            viewModel.send(action: .presentMyProfileView)
+        }
     }
 }
 

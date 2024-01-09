@@ -11,11 +11,15 @@ import Combine
 class HomeViewModel: ObservableObject {
     
     enum Action {
-        case getUser
+        case load
+        case presentMyProfileView
+        case presentOtherProfileView(String)
     }
     
     @Published var myUser: User?
     @Published var users: [User] = []//[.stub1, .stub2]
+    @Published var phase: Phase = .notRequested
+    @Published var modalDestination: HomeModalDestination?
     
     private var userId: String
     private var container: DIContainer
@@ -28,15 +32,29 @@ class HomeViewModel: ObservableObject {
     
     func send(action: Action) {
         switch action {
-            case .getUser:
+            case .load:
+                phase = .loading
                 container.services.userService.getUser(userId: userId)
-                    .sink { completion in
-                        // TODO:
-                    } receiveValue: { [weak self] user in
+                    .handleEvents ( receiveOutput: { [weak self] user in
                         self?.myUser = user
-                    }.store(in: &subscriptions)
-
-                return
+                    })
+                    .flatMap { user in
+                        self.container.services.userService.loadUsers(userId: user.id)
+                    }
+                    .sink { [weak self] completion in
+                        if case .failure = completion {
+                            self?.phase = .fail
+                        }
+                    } receiveValue: { [weak self] users in
+                        self?.phase = .success
+                        self?.users = users
+                    }
+                    .store(in: &subscriptions)
+                
+            case .presentMyProfileView:
+                modalDestination = .myProfile
+            case .presentOtherProfileView(let userId):
+                modalDestination = .otherProfile(userId)
         }
     }
 }

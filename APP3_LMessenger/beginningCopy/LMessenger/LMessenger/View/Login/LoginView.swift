@@ -10,7 +10,7 @@ import AuthenticationServices
 
 struct LoginView: View {
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var authViewModel: AuthenticatedViewModel
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
     
     var body: some View {
         VStack(alignment: .leading) {

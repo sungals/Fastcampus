@@ -35,9 +35,8 @@ class AuthenticationViewModel: ObservableObject {
     private var container: DIContainer
     private var subscriptions = Set<AnyCancellable>()
     
-    init(container: DIContainer, isLoading: Bool) {
+    init(container: DIContainer) {
         self.container = container
-        self.isLoading = isLoading
     }
     
     func send(action: Action) {

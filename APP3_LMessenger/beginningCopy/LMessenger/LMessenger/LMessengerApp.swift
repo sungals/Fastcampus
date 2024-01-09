@@ -14,7 +14,7 @@ struct LMessengerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AuthenticatedView(authViewModel: .init(container: container, isLoading: false))
+            AuthenticatedView(authViewModel: .init(container: container))
                 .environmentObject(container)
         }
     }
